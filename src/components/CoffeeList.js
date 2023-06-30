@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Coffee from './Coffee'
 
-
 function CoffeeList(props) {
 
   return (
@@ -10,6 +9,7 @@ function CoffeeList(props) {
       <hr />
       {props.coffeeList.map((coffee) => 
         <Coffee 
+          whenCoffeeClicked = { props.onCoffeeSelection }
           name={coffee.name}
           origin={coffee.name}
           roast={coffee.name}
@@ -17,7 +17,7 @@ function CoffeeList(props) {
           description={coffee.name}
           quantity={coffee.name}
           productImage={coffee.productImage}
-          id={item.id}
+          id={coffee.id}
         />
       )}
     </React.Fragment>
