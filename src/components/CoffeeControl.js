@@ -20,7 +20,7 @@ class CoffeeControl extends React.Component {
         roast: "light",
         price: 5,
         description: "Arabica beans are known for their delicate flavor, pleasant acidity, and nuanced taste profiles. They often exhibit notes of fruit, berries, chocolate, and flowers. Arabica beans have a lower caffeine content compared to other varieties.",
-        quantity: 130,
+        quantity: 1,
         productImage: Coffee1,
         id: v4(),
         },
@@ -105,6 +105,19 @@ class CoffeeControl extends React.Component {
     this.setState({ selectedCoffee });
   }
 
+  handleBuyCoffee = (id) => {
+    const selectedCoffee = this.state.mainCoffeeList.find(coffee => coffee.id === id);
+    if (selectedCoffee.quantity > 0) {
+      selectedCoffee.quantity = selectedCoffee.quantity - 1;
+      this.setState({ selectedCoffee });
+    }
+  }
+
+  handleRestockCoffee = (id) => {
+    const selectedCoffee = this.state.mainCoffeeList.find(coffee => coffee.id === id);
+    selectedCoffee.quantity = selectedCoffee.quantity + 130;
+    this.setState({ selectedCoffee });
+  }
 
 
   render(){
@@ -115,7 +128,7 @@ class CoffeeControl extends React.Component {
       currentlyVisibleState = <EditCoffeeForm coffee = {this.state.selectedCoffee} onEditCoffee = {this.handleEditingCoffeeInList}/>
       buttonText = "Return to Coffee List";
     } else if (this.state.selectedCoffee != null) {
-      currentlyVisibleState = <CoffeeDetails coffee={this.state.selectedCoffee} onClickingDelete={this.handleDeletingCoffee} onClickingEdit={this.handleEditClick}/>
+      currentlyVisibleState = <CoffeeDetails coffee={this.state.selectedCoffee} onClickingDelete={this.handleDeletingCoffee} onClickingEdit={this.handleEditClick} onBuyCoffee={this.handleBuyCoffee} onRestockCoffee={this.handleRestockCoffee}/>
       buttonText = "Return to Coffee List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewCoffeeToList}/>;
