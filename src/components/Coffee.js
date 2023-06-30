@@ -19,13 +19,13 @@ function Coffee(props){
 }
 
 Coffee.propTypes = {
-  name: PropTypes.string,
-  origin: PropTypes.string,
-  description: PropTypes.string,
-  roast: PropTypes.string,
-  price: PropTypes.number,
-  quantity: PropTypes.number,
-  productImage: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  origin: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  roast: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
+  productImage: PropTypes.string.isRequired,
   id: PropTypes.string,
   whenCoffeeClicked: PropTypes.func
 };
