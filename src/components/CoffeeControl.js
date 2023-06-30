@@ -52,17 +52,59 @@ class CoffeeControl extends React.Component {
     };
   }
 
+  handleClick = () => {
+    if (this.state.selectedCoffee != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedCoffee: null,
+        editing: false
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }));
+    }
+  }
+
+  handleEditClick = () => { 
+    this.setState({editing: true}); 
+  }
+
+  handleDeletingCoffee = (id) => { 
+    const newMainCoffeeList = this.state.mainCoffeeList.filter(coffee => coffee.id !== id); 
+    this.setState({
+      mainTicketList: newMainCoffeeList, 
+      selectedCoffee: null 
+    })
+  }
+
+  handleAddingNewCoffeeToList = (newCoffee) => { 
+    const newMainCoffeeList = this.state.mainCoffeeList.concat(newCoffee); 
+    this.setState({mainTicketList: newMainCoffeeList,
+                  formVisibleOnPage: false });
+  } 
+
+  handleEditingCoffeeInList = (coffeeToEdit) => {
+    const newMainCoffeeList = this.state.mainCoffeeList.concat(coffeeToEdit);
+    this.setState({mainCoffeeList: newMainCoffeeList,
+                  formVisibleOnPage: false,});
+  }
+
+
+
+
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null; 
   
-    if () {      
-      currentlyVisibleState = <EditCoffeeForm/>
+    if (this.state.editing) {      
+      currentlyVisibleState = <EditCoffeeForm coffee = {this.state.selectedCoffee} onEditCoffee = {this.handleEditingCoffeeInList}/>
       buttonText = "Return to Coffee List";
-    } else if () {
+    } else if (this.state.selectedCoffee != null) {
       currentlyVisibleState = <CoffeeDetails/>
       buttonText = "Return to Coffee List";
-    } else if () {
+    } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewCoffeeForm/>;
       buttonText = "Return to Coffee List"; 
     } else {
