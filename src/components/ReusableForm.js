@@ -9,7 +9,7 @@ function ReusableForm(props) {
         <input type='text' name='origin' placeholder='Coffee origin' />
         <input type='text' name='roast' placeholder='Coffee Roast' />
         <input type='number' name='price' placeholder='Coffee price' />
-        <input type='number' name='description' placeholder='Coffee description'/>
+        <input type='text' name='description' placeholder='Coffee description'/>
         <input type='number' name='quantity' placeholder='Coffee quantity'/>
         <select name="productImage">
           <option value="image1.jpg">Image 1</option>
