@@ -11,13 +11,14 @@ function CoffeeList(props) {
         <Coffee 
           whenCoffeeClicked = { props.onCoffeeSelection }
           name={coffee.name}
-          origin={coffee.name}
-          roast={coffee.name}
-          price={coffee.name}
-          description={coffee.name}
-          quantity={coffee.name}
+          origin={coffee.origin}
+          roast={coffee.roast}
+          price={coffee.price}
+          description={coffee.desription}
+          quantity={coffee.quantity}
           productImage={coffee.productImage}
           id={coffee.id}
+          key={coffee.id}
         />
       )}
     </React.Fragment>
@@ -26,6 +27,7 @@ function CoffeeList(props) {
 
 CoffeeList.propTypes = {
   coffeeList: PropTypes.array,
+  onCoffeeSelection: PropTypes.func
 };
 
 export default CoffeeList;
