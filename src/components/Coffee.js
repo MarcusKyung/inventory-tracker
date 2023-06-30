@@ -12,7 +12,6 @@ function Coffee(props){
         <p>Quantity: {props.quantity}</p>
         <p>Description: {props.description}</p>
         <p>Price: ${props.price}/bag</p>
-        <hr/>
       </div>
     </React.Fragment>
   );
