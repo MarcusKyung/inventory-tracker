@@ -7,14 +7,24 @@ function EditCoffeeForm (props) {
 
   function handleEditCoffeeFormSubmission(event) {
     event.preventDefault();
-    props.onEditCoffee({names: event.target.names.value, location: event.target.location.value, issue: event.target.issue.value, id: ticket.id});
+    props.onEditCoffee({
+      name: event.target.name.value, 
+      origin: event.target.origin.value, 
+      roast: event.target.roast.value, 
+      description: event.target.description.value, 
+      price: event.target.price.value, 
+      quantity: event.target.quantity.value, 
+      productImage: event.target.productImage.value, 
+      id: coffee.id
+    });
   }
 
   return (
     <React.Fragment>
       <ReusableForm 
         formSubmissionHandler={handleEditCoffeeFormSubmission} 
-        buttonText="Update Coffee" />
+        buttonText="Update Coffee" 
+        />
     </React.Fragment>
   );
 }
