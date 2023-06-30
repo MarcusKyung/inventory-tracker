@@ -1,22 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Card } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 function CoffeeDetail(props){
   const { coffee, onClickingDelete } = props; 
 
   return (
-    <React.Fragment>
-      <h1>Coffee Detail</h1>
-      <h3>{coffee.name} - {coffee.origin}</h3>
-      <p>Roast: {coffee.roast}</p>
-      <p>Description: {coffee.description}</p>
-      <p>Price: {coffee.price}</p>
-      <p>Quantity in Stock: {coffee.quantity}</p>
-      <img src={coffee.productImage} alt="coffee image" />
-      <button onClick={ props.onClickingEdit }>Update Coffee</button>
-      <button onClick={()=> onClickingDelete(coffee.id) }>Close Coffee</button>
-      <hr/>
-    </React.Fragment>
+    <Card className="card-rounded" style={{ width: '25rem', outline: '2px solid', background: 'grey' }}>      
+      <Card.Img variant="top" src={coffee.productImage} alt="coffee image" />
+      <Card.Body>
+        <Card.Title>Coffee Detail</Card.Title>
+        <Card.Subtitle>{coffee.name} Beans - from: {coffee.origin}</Card.Subtitle>
+        <ul>
+          <li>Roast: {coffee.roast}</li>
+          <li>Description: {coffee.description}</li>
+          <li>Price: {coffee.price}</li>
+          <li>Quantity in Stock: {coffee.quantity}</li>
+        </ul>
+        <Button variant="primary" onClick={ props.onClickingEdit }>Update Coffee</Button>
+        <Button variant="primary" onClick={()=> onClickingDelete(coffee.id) }>Delete Coffee</Button>
+      </Card.Body>
+    </Card>
   );
 }
 
