@@ -5,9 +5,9 @@ function Coffee(props){
   return (
     <React.Fragment> 
       <div onClick = {() => props.whenCoffeeClicked(props.id)}> 
-        <h3>{props.name} Coffee Beans</h3>
-        <img src={props.productImage}/>
-        <p>Country of Origin: {props.origin}</p>
+        <h3 style={{textAlign: "center" , marginTop: "10px"}}>{props.name} Coffee Beans</h3>
+        <img src={props.productImage} style={{ display: 'block', margin: '0 auto' }}/>
+        <p><em>Country of Origin: {props.origin}</em></p>
         <p>Roast Type: {props.roast}</p>
         <p>Quantity: {props.quantity}</p>
         <p>Description: {props.description}</p>

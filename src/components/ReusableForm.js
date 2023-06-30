@@ -12,10 +12,10 @@ function ReusableForm(props) {
         <input type='text' name='description' placeholder='Coffee description' required/>
         <input type='number' name='quantity' placeholder='Coffee quantity' required/>
         <select name="productImage" required>
-          <option value="Coffee1">Image 1</option>
-          <option value="Coffee2">Image 2</option>
-          <option value="Coffee3">Image 3</option>
-          <option value="Coffee4">Image 3</option>
+          <option value="Coffee1.png">Image 1</option>
+          <option value="Coffee2.png">Image 2</option>
+          <option value="Coffee3.png">Image 3</option>
+          <option value="Coffee4.png">Image 3</option>
         </select>
         <button type='submit'>{props.buttonText}</button>
       </form>

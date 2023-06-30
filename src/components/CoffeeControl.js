@@ -11,6 +11,8 @@ import Coffee4 from './../img/Coffee4.png';
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Button from "react-bootstrap/Button";
 import { ButtonGroup } from "react-bootstrap";
+import './../index.css';
+import { Row } from 'react-bootstrap';
 
 class CoffeeControl extends React.Component {
   constructor(props) {
@@ -151,10 +153,14 @@ class CoffeeControl extends React.Component {
     <React.Fragment>
       {currentlyVisibleState}
       <br />
-      <ButtonGroup aria-label="Basic example">
-        <Button variant="secondary" onClick={this.handleRandomCoffee}>Random Coffee</Button>
-        <Button onClick={this.handleClick} style={{ display: 'block', margin: '0 auto' }}>{buttonText}</Button>
-      </ButtonGroup>
+      <Row className="justify-content-center">
+        <ButtonGroup aria-label="Basic example">
+          <Button variant="success" onClick={this.handleRandomCoffee}>
+            Random Coffee
+          </Button>
+          <Button variant="success" onClick={this.handleClick}>{buttonText}</Button>
+        </ButtonGroup>
+      </Row>
     </React.Fragment>
   );
   }
