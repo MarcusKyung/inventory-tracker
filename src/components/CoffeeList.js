@@ -14,8 +14,8 @@ function CoffeeList(props) {
           origin={coffee.origin}
           roast={coffee.roast}
           price={coffee.price}
-          description={coffee.desription}
-          quantity={coffee.quantity}
+          description={coffee.description}
+          quantity={coffee.quantity > 0 ? coffee.quantity : "Out of Stock"}
           productImage={coffee.productImage}
           id={coffee.id}
           key={coffee.id}
