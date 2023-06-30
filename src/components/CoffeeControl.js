@@ -8,6 +8,9 @@ import Coffee1 from './../img/Coffee1.png';
 import Coffee2 from './../img/Coffee2.png';
 import Coffee3 from './../img/Coffee3.png';
 import Coffee4 from './../img/Coffee4.png';
+import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Button from "react-bootstrap/Button";
+import { ButtonGroup } from "react-bootstrap";
 
 class CoffeeControl extends React.Component {
   constructor(props) {
@@ -119,6 +122,13 @@ class CoffeeControl extends React.Component {
     this.setState({ selectedCoffee });
   }
 
+  handleRandomCoffee = () => {
+    const randomIndex = Math.floor(Math.random() * this.state.mainCoffeeList.length);
+    const randomCoffee = this.state.mainCoffeeList[randomIndex];
+    this.setState({
+      selectedCoffee: randomCoffee
+    });
+  }
 
   render(){
     let currentlyVisibleState = null;
@@ -140,7 +150,11 @@ class CoffeeControl extends React.Component {
     return (
     <React.Fragment>
       {currentlyVisibleState}
-      <button onClick={this.handleClick}>{buttonText}</button>
+      <br />
+      <ButtonGroup aria-label="Basic example">
+        <Button variant="secondary" onClick={this.handleRandomCoffee}>Random Coffee</Button>
+        <Button onClick={this.handleClick} style={{ display: 'block', margin: '0 auto' }}>{buttonText}</Button>
+      </ButtonGroup>
     </React.Fragment>
   );
   }
