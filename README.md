@@ -1,3 +1,64 @@
+# _Coffee Shop Inventory Tracker_
+
+#### By _**Marcus Kyung**_
+
+#### _This React.js application is designed to allow a user to track coffee bean inventory and details.._
+
+## Technologies Used
+
+* _HTML/JSX_
+* _CSS_
+* _JavaScript_
+* _React.js_
+* _Node.js_
+* _React-Bootstrap 2.8.0_
+
+
+## Description
+_This React.js application is designed to show a user various coffee types as well as offer them the ability to create, edit, and delete them. This application is capable of tracking the total coffee units for each type of coffee as well as restock and decrement them in quantities of 130 units and 1 unit, respectively._ 
+
+## Setup/Installation Requirements
+
+1. Clone this repo from GH to your local machine.
+2. Navigate to the root directory of the project in your CLI and run `npm install` to install all dependencies.
+3. Run `npm start` to start the application in your browser. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. 
+4. Click each coffee entry to view its details, otherwise click add coffee to add a new coffee entry.
+5. Existing coffee entries can be edited from their details page.
+
+## Component Diagram
+![Alt text](image.png)
+
+## Known Bugs
+
+* _Using the image dropdown inside the form does not add an image to new coffee entries._
+
+## License
+
+_For questions, comments, or concerns please reach out at Kyungmj@gmail.com_
+
+MIT License
+
+Copyright (c) [2023] [Marcus Kyung]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR\ A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

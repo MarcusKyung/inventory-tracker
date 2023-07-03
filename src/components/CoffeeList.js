@@ -13,7 +13,7 @@ function CoffeeList(props) {
         <Row>
           {props.coffeeList.map((coffee) => (
             <Col key={coffee.id} xs={12} sm={6} md={4} lg={3}>
-              <Card style={{ outline: '2px solid', background: 'lightGrey' }}>
+              <Card className="coffeeCard" style={{ outline: '2px solid', background: 'lightGrey' }}>
                 <Coffee
                   whenCoffeeClicked={props.onCoffeeSelection}
                   name={coffee.name}
